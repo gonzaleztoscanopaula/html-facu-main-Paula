@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ddc5a1; /* Color de fondo anterior */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #eedeb8;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.logo {
+    width: 90px; /* Tamaño del logo */
+    height: auto; /* Mantiene proporción */
+    margin-right: 20px; /* Espacio entre el logo y el menú */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.foto-perfil {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.adicionales {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.adicional {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.foto-adicional {
+    max-width: 100px; /* Ajustar según sea necesario */
+    max-height: 100px; /* Ajustar según sea necesario */
+    width: auto;
+    height: auto;
+    margin-right: 20px;
+}
+
+.detalle-adicional {
+    flex-grow: 1;
+}
+
+.detalle-adicional h2 {
+    margin: 0 0 5px 0;
+}
+
+.detalle-adicional p {
+    margin: 5px 0;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-control {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.cantidad {
+    width: 50px;
+    text-align: center;
+}
+
+.guardar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.guardar button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.guardar button:hover {
+    background-color: #555;
+}
