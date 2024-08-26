@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generando sonrisas</title>
+    <style>
+        body {
+            background-color: #DDC5A1; /* Color de fondo marrón claro */
+            margin: 0; /* Eliminar margen predeterminado */
+        }
+        header {
+            background-color: #EEDEB8; /* Color de fondo del encabezado */
+            padding: 5px; /* Espacio interior del encabezado */
+            margin: 0; /* Eliminar margen */
+            box-sizing: border-box; /* Asegurar que el padding no cause overflow */
+            width: 100%; /* Asegurar que el encabezado ocupe todo el ancho */
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .back-button {
+            margin-top: 10px; /* Margen superior para separar de la flecha del encabezado */
+            margin-left: 10px; /* Margen izquierdo para separar del borde */
+            margin-bottom: 100px; /* Incrementar espacio entre la flecha y la información del usuario */
+        }
+        .user-info {
+            margin-bottom: 250px; /* Espacio entre la tercera y cuarta fila */
+            text-align: center; /* Centrar contenido */
+        }
+        .logout {
+            text-align: center; /* Centrar contenido */
+        }
+        .logout a {
+            color: black; /* Color del enlace */
+            font-weight: normal; /* Peso de la fuente */
+            text-decoration: none; /* Sin subrayado */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagenes\generando sonrisas.png" alt="Logo" style="width: 25px; height: auto; margin-right: 10px;">
+            <h1 style="font-size: 15px;">Generando sonrisas</h1>
+        </div>
+    </header>
+    <div class="back-button">
+        <a href="#" onclick="history.back();">
+            <img src="imagenes/flecha.png" alt="Volver Atrás" style="width: 25px; height: auto;">
+        </a>
+    </div>
+    <div>
+        <div class="user-info">
+            <img src="imagenes/logo_de_usuario-removebg-preview (2).png" alt="Logo Usuario" style="width: 80px; height: auto;">
+            <p style="font-weight: bold; font-size: 16px;">Nombre de Usuario</p>
+        </div>
+        <div class="logout">
+            <a href="logout.html">Cerrar Sesión</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

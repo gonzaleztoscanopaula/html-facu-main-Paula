@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genernado sonrisas</title>
+    <style>
+        /* Tu estilo CSS aquí */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header row">
+            <!-- Margen superior izquierdo: Logo y nombre de la página -->
+            <div class="header-left">
+                <img src="imagenes\generando sonrisas.png" alt="Logo de la página">
+                <h1>Generando sonrisas</h1>
+            </div>
+            <!-- Margen superior derecho: Botones de Mesas y Pedidos, Perfil y Logo de Usuario -->
+            <div class="header-right">
+                <button id="btn-mesas">Mesas</button>
+                <button id="btn-pedidos">Pedidos</button>
+                <div class="perfil-container">
+                    <div class="perfil-btn">Perfil</div>
+                    <img class="perfil-img" src="imagenes/logo_de_usuario-removebg-preview (2).png" alt="Logo de Usuario">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Botón de Volver Atrás -->
+    <div class="navigation row">
+        <a href="#" onclick="history.back();">
+            <img src="imagenes/flecha.png" alt="Volver Atrás" style="width: 25px; height: auto;">
+        </a>
+    </div>
+    <!-- Título de Realizar Pedido -->
+    <h2 class="row">Realizar pedido</h2>
+    <!-- Botones debajo del título -->
+    <div class="button-container">
+        <button class="order-button">Desayunos/Meriendas</button>
+        <button class="order-button">Cafeteria</button>
+        <button class="order-button">Acompañamiento</button>
+        <button class="order-button">Bebidas</button>
+        <button class="order-button">Picadas</button>
+        <button class="order-button">Pizzas/Empanadas</button>
+    </div>
+    <!-- Nuevo contenedor para la imagen, texto y botones -->
+    <div class="content-container">
+        <div class="content-left">
+            <img src="imagenes/papas_fritas-removebg-preview.png" alt="Papas fritas">
+        </div>
+        <div class="content-center">
+            <p class="title">Papas emperador - $2200</p>
+            <p class="description">Papas fritas con queso cheddar, verdeo y bacon.</p>
+        </div>
+        <div class="content-right">
+            <button id="papas-minus">-</button>
+            <span id="papas-quantity">0</span>
+            <button id="papas-plus">+</button>
+        </div>
+    </div>
+    <!-- Nuevo contenedor para la imagen, texto y botones -->
+    <div class="content-container">
+        <div class="content-left">
+            <img src="imagenes\pizza-removebg-preview.png" alt="Pizzas">
+        </div>
+        <div class="content-center">
+            <p class="title">Pizza emperador - $5500</p>
+            <p class="description">Salsa, queso muzzarella, bacon, queso parmesano y rucula.</p>
+        </div>
+        <div class="content-right">
+            <button id="pizza-minus">-</button>
+            <span id="pizza-quantity">0</span>
+            <button id="pizza-plus">+</button>
+        </div>
+    </div>
+    <!-- Nuevo contenedor para la imagen, texto y botones -->
+    <div class="content-container">
+        <div class="content-left">
+            <img src="imagenes\empanadas-removebg-preview.png" alt="Empanadas">
+        </div>
+        <div class="content-center">
+            <p class="title">Empanadas criollas - $6500</p>
+            <p class="description">Empanadas de carne cortada a cuchillo dulce y salada.</p>
+        </div>
+        <div class="content-right">
+            <button id="empanadas-minus">-</button>
+            <span id="empanadas-quantity">0</span>
+            <button id="empanadas-plus">+</button>
+        </div>
+    </div>
+    <!-- Nuevo contenedor para la imagen, texto y botones -->
+    <div class="content-container">
+        <div class="content-left">
+            <img src="imagenes\ravioles-removebg-preview.png" alt="Ravioles">
+        </div>
+        <div class="content-center">
+            <p class="title">Ravioles - $6000</p>
+            <p class="description">Ravioles de ricota y queso, con salsa bolognesa o mixta.</p>
+        </div>
+        <div class="content-right">
+            <button id="ravioles-minus">-</button>
+            <span id="ravioles-quantity">0</span>
+            <button id="ravioles-plus">+</button>
+        </div>
+    </div>
+    <!-- Nuevo contenedor para la imagen, texto y botones -->
+    <div class="content-container">
+        <div class="content-left">
+            <img src="imagenes\ensalada-removebg-preview.png" alt="Ensalada">
+        </div>
+        <div class="content-center">
+            <p class="title">Ensalada mixta - $2700</p>
+            <p class="description">Lechuga, tomates cherry, pimiento rojo, aceitunas negras y pollo.</p>
+        </div>
+        <div class="content-right">
+            <button id="ensalada-minus">-</button>
+            <span id="ensalada-quantity">0</span>
+            <button id="ensalada-plus">+</button>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 50px;">
+        <button style="margin-right: 40px; background-color: black; color: white; border-radius: 20px; padding: 10px 20px;">Guardar pedido</button>
+        <button style="margin-left: 40px; background-color: black; color: white; border-radius: 20px; padding: 10px 20px;">Adicionales</button>
+    </div>
+    <script>
+        document.getElementById('papas-plus').addEventListener('click', function() {
+            let quantity = document.getElementById('papas-quantity');
+            quantity.innerText = parseInt(quantity.innerText) + 1;
+        });
+        document.getElementById('papas-minus').addEventListener('click', function() {
+            let quantity = document.getElementById('papas-quantity');
+            if (parseInt(quantity.innerText) > 0) {
+                quantity.innerText = parseInt(quantity.innerText) - 1;
+            }
+        });
+
+        document.getElementById('pizza-plus').addEventListener('click', function() {
+            let quantity = document.getElementById('pizza-quantity');
+            quantity.innerText = parseInt(quantity.innerText) + 1;
+        });
+        document.getElementById('pizza-minus').addEventListener('click', function() {
+            let quantity = document.getElementById('pizza-quantity');
+            if (parseInt(quantity.innerText) > 0) {
+                quantity.innerText = parseInt(quantity.innerText) - 1;
+            }
+        });
+
+        document.getElementById('empanadas-plus').addEventListener('click', function() {
+            let quantity = document.getElementById('empanadas-quantity');
+            quantity.innerText = parseInt(quantity.innerText) + 1;
+        });
+        document.getElementById('empanadas-minus').addEventListener('click', function() {
+            let quantity = document.getElementById('empanadas-quantity');
+            if (parseInt(quantity.innerText) > 0) {
+                quantity.innerText = parseInt(quantity.innerText) - 1;
+            }
+        });
+
+        document.getElementById('ravioles-plus').addEventListener('click', function() {
+            let quantity = document.getElementById('ravioles-quantity');
+            quantity.innerText = parseInt(quantity.innerText) + 1;
+        });
+        document.getElementById('ravioles-minus').addEventListener('click', function() {
+            let quantity = document.getElementById('ravioles-quantity');
+            if (parseInt(quantity.innerText) > 0) {
+                quantity.innerText = parseInt(quantity.innerText) - 1;
+            }
+        });
+
+        document.getElementById('ensalada-plus').addEventListener('click', function() {
+            let quantity = document.getElementById('ensalada-quantity');
+            quantity.innerText = parseInt(quantity.innerText) + 1;
+        });
+        document.getElementById('ensalada-minus').addEventListener('click', function() {
+            let quantity = document.getElementById('ensalada-quantity');
+            if (parseInt(quantity.innerText) > 0) {
+                quantity.innerText = parseInt(quantity.innerText) - 1;
+            }
+        });
+    </script>
+</body>
+</html>

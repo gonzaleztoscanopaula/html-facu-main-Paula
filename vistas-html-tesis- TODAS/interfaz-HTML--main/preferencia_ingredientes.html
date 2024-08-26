@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #DDC5A1;
+            margin: 0;
+            padding-top: 60px; 
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #EEDEB8;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .navbar .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        .navbar img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .nav-links a {
+            color: black;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .navbar .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .navbar .user-image {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+        .image-button {
+            position: fixed;
+            top: 70px; 
+            left: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .image-button img {
+            height: 40px; 
+            width: 40px; 
+        }
+        .container {
+            background-color: #DDC5A1;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: 100px auto; 
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .product-image {
+            max-width: 200px; /* Adjusted size */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .product-name {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .ingredients-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .ingredients-list li:last-child {
+            border-bottom: none;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #000;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #333;
+        }
+        .toggle-btn {
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .toggle-btn.remove {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-section">
+            <img src="logo.png" alt="Logo">
+            <div class="logo-text">EL EMPERADOR</div>
+        </div>
+        <div class="nav-links">
+            <a href="#mesas">Mesas</a>
+            <a href="#pedidos">Pedidos</a>
+            <a href="#perfil">Perfil</a>
+            <img src="logo_usuario.png" alt="Usuario" class="user-image">
+        </div>
+    </div>
+
+    <button class="image-button">
+        <img src="flecha.png" alt="Botón de imagen">
+    </button>
+
+    <div class="container">
+        <h2>Ingredientes</h2>
+        <img src="comida.png" alt="Imagen del Producto" class="product-image">
+        <div class="product-name">Tacos de Pescado Baja</div>
+        <ul class="ingredients-list">
+            <li>Tortilla de maíz <button class="toggle-btn" onclick="toggleIngredient(this)">Dejar</button></li>
+            <li>Aceite <button class="toggle-btn" onclick="toggleIngredient(this)">Dejar</button></li>
+            <li>Mayonesa <button class="toggle-btn" onclick="toggleIngredient(this)">Dejar</button></li>
+            <li>Rodajas de limón <button class="toggle-btn" onclick="toggleIngredient(this)">Dejar</button></li>
+            <li>Salsa picante <button class="toggle-btn" onclick="toggleIngredient(this)">Dejar</button></li>
+        </ul>
+        <button class="btn">Guardar Cambios</button>
+    </div>
+
+    <script>
+        function toggleIngredient(button) {
+            if (button.classList.contains('remove')) {
+                button.classList.remove('remove');
+                button.textContent = 'Dejar';
+                button.style.backgroundColor = '#28a745';
+            } else {
+                button.classList.add('remove');
+                button.textContent = 'Sacar';
+                button.style.backgroundColor = '#dc3545';
+            }
+        }
+    </script>
+</body>
+</html>
