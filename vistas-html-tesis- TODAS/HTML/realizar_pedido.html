@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El emperador</title>
+    <link rel="icon" href="C:\Users\Usuario\OneDrive\Desarrollo de Software III\Tesis\html-facu-main-Paula\vistas-html-tesis- TODAS\imagenes\icono.ico" type="image/x-icon">
+
+    <style>
+        body {
+            background-color: #DDC5A1; /* Color de fondo marrón claro */
+            margin: 0; /* Eliminar margen predeterminado */
+            padding: 0; /* Eliminar padding predeterminado */
+        }
+        header {
+            background-color: #EEDEB8; /* Color de fondo del encabezado */
+            padding: 0; /* Eliminar padding del encabezado */
+            margin: 0; /* Eliminar margen del encabezado */
+            box-sizing: border-box; /* Asegurar que el padding no cause overflow */
+            width: 100%; /* Asegurar que el encabezado ocupe todo el ancho */
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px; /* Agrega espacio alrededor del encabezado */
+            margin: 0; /* Eliminar margen del contenedor del encabezado */
+            box-sizing: border-box; /* Asegurar que el padding no cause overflow */
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img {
+            max-width: 110px;
+            margin-right: 50px;
+        }
+
+        .header-left h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right button {
+            font-size: 20px;
+            border: none; /* Elimina el borde de los botones */
+            background: none; /* Elimina el fondo de los botones */
+            cursor: pointer;
+            margin-right: 20px; /* Añade margen derecho a todos los botones */
+            color: black; /* Color de letra blanco para todos los botones */
+        }
+
+        .perfil-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .perfil-btn {
+            border: 1px solid black; /* Borde negro para el botón "Perfil" */
+            padding: 5px 15px; /* Espacio interno del botón "Perfil" */
+            border-radius: 5px; /* Bordes redondeados para el botón "Perfil" */
+            background-color: black; /* Fondo negro para el botón "Perfil" */
+            color: white; /* Color de letra blanco para el botón "Perfil" */
+            margin-right: 20px; /* Añade margen derecho al botón "Perfil" */
+        }
+
+        .perfil-img {
+            max-width: 30px;
+            margin-left: 10px;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            margin-top: 10px;
+            margin-left: 15px; /* Mueve el botón de volver atrás a la derecha */
+        }
+
+        h2 {
+            font-size: 40px; /* Tamaño de fuente más grande */
+            margin-top: 20px; /* Añadir margen superior para separarlo de los botones */
+            margin-left: 600px; /* Mueve el título "Pedidos Pendientes" a la derecha */
+        }
+
+        .historial button {
+            font-size: 20px;
+            background: none; /* Elimina el fondo del botón */
+            border: none; /* Elimina el borde del botón */
+            text-decoration: underline; /* Subrayado por defecto */
+            cursor: pointer;
+        }
+
+        .historial button:hover {
+            text-decoration: underline; /* Subraya el texto al pasar el cursor sobre el botón */
+        }
+
+        .historial button:focus {
+            outline: none; /* Elimina el contorno al hacer clic en el botón */
+        }
+
+        /* Estilos para todas las filas */
+        .row {
+            margin-bottom: 40px; /* Espacio entre cada fila */
+        }
+
+        /* Estilos para centrar los botones y agregarles espacio entre ellos */
+        .pedidos-container {
+            display: flex;
+            flex-direction: column; /* Alinear los elementos en columna */
+            align-items: center; /* Centrar horizontalmente los elementos */
+        }
+
+        .pedido {
+            width: 100%; /* Asegurar que la contenedora del botón ocupe todo el ancho disponible */
+        }
+
+        .pedido button {
+            font-size: 24px; /* Aumentar el tamaño de la fuente */
+            width: 100%; /* Ancho del 100% del contenedor */
+            max-width: 300px; /* Ancho máximo de los botones */
+            height: 70px; /* Alto fijo para todos los botones */
+            margin: 20px auto; /* Agregar espacio vertical entre cada botón y centrarlo horizontalmente */
+            background-color: #b9977e; /* Color de fondo de los botones */
+            border: 2px solid #000; /* Borde de los botones */
+            border-radius: 10px; /* Bordes redondeados para los botones */
+            cursor: pointer; /* Cambiar el cursor al pasar sobre los botones */
+            display: block; /* Asegurar que el botón sea un bloque */
+            text-align: center; /* Centrar el texto dentro del botón */
+        }
+
+        .pedido button:hover {
+            background-color: #e0e0e0; /* Cambiar el color de fondo al pasar el cursor */
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("btn-mesas").addEventListener("click", function() {
+                window.location.href = "mesas.html"; // Cambia esta línea a la URL de tu vista de mesas
+            });
+            
+            // Redirigir a la vista de pedidos
+            document.getElementById('btn-pedidos').addEventListener('click', function() {
+            window.location.href = 'pedidos.html'; // Cambia 'pedidos.html' por la URL de tu vista de pedidos
+            });
+
+            document.querySelector(".perfil-btn").addEventListener("click", function() {
+                window.location.href = "perfil.html"; // Cambia esta línea a la URL de tu vista de perfil
+            });
+
+            document.querySelectorAll(".pedido button").forEach(button => {
+                button.addEventListener("click", function() {
+                    const mesaNumber = this.textContent.split(' ')[2];
+                    window.location.href = `pedido_mesa${mesaNumber}.html`; // Cambia esta línea a la URL de tu vista de pedido de mesa
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header row">
+            <!-- Margen superior izquierdo: Logo y nombre de la página -->
+            <div class="header-left">
+                <img src="C:\Users\Usuario\OneDrive\Desarrollo de Software III\Tesis\html-facu-main-Paula\vistas-html-tesis- TODAS\imagenes\logo.png" alt="Logo de la página">
+            </div>
+            <!-- Margen superior derecho: Botones de Mesas y Pedidos, Perfil y Logo de Usuario -->
+            <div class="header-right">
+                <button id="btn-mesas">Mesas</button>
+                <button id="btn-pedidos">Pedidos</button>
+                <div class="perfil-container">
+                    <div class="perfil-btn">Perfil</div>
+                    <img class="perfil-img" src="C:\Users\Usuario\OneDrive\Desarrollo de Software III\Tesis\html-facu-main-Paula\vistas-html-tesis- TODAS\imagenes\logo_usuario.png" alt="Logo de Usuario">
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Botón de Volver Atrás -->
+    <div class="navigation row">
+        <a href="#" onclick="history.back();">
+            <img src="C:\Users\Usuario\OneDrive\Desarrollo de Software III\Tesis\html-facu-main-Paula\vistas-html-tesis- TODAS\imagenes\flecha.png" alt="Volver Atrás" style="width: 25px; height: auto;">
+        </a>
+    </div>
+    <!-- Título de Realizar pedidos -->
+    <h2 class="row">Realizar pedidos</h2>
+    <!-- Botones de Pedidos de Mesa -->
+    <div class="pedidos-container row">
+        <div class="pedido">
+            <button>Desayunos/Meriendas</button>
+        </div>
+        <div class="pedido">
+            <button>Almuerzo</button>
+        </div>
+        <div class="pedido">
+            <button>Cena</button>
+        </div>
+        <div class="pedido">
+            <button>Bebidas</button>
+        </div>
+    </div>
+
+</body>
+</html>
